@@ -19,13 +19,8 @@ describe('<Button />', () => {
     //verifica o clique do botao.
     it('should call function on button click', () => {
         const fn = jest.fn();
-        
         render(<Button text="load more" onClick={fn}/>)
-        
         const button = screen.getByRole('button', { name: /load more/i });
-
-        //fireEvent.click(button);
-
         userEvent.click(button);
         expect(fn).toHaveBeenCalledTimes(1);
     });
@@ -41,5 +36,12 @@ describe('<Button />', () => {
         render(<Button text="load more" disabled={false}/>)
         const button = screen.getByRole('button', { name: /load more/i });
         expect(button).toBeEnabled();
+    });
+
+    //tirar uma foto do momento.
+    it('should match snapshot', () => {
+        const fn = jest.fn
+        const {container} = render(<Button text="load more" disabled={false} onClick={fn} />);
+        expect(container.firstChild).toMatchSnapshot();
     });
 });
