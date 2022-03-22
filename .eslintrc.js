@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true,
+    node: true,
   },
   extends: [
     'eslint:recommended',
@@ -14,16 +14,9 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 12,
+    ecmaVersion: 'latest',
     sourceType: 'module',
   },
   plugins: ['react'],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
-  rules: {
-    'react/react-in-jsx-scope': 'off',
-  },
+  rules: {},
 };

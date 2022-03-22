@@ -1,3 +1,5 @@
+/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable no-undef */
 const { render, screen } = require('@testing-library/react');
 import userEvent from '@testing-library/user-event';
 import { Button } from '.';
